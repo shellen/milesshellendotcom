@@ -1,125 +1,130 @@
 <!DOCTYPE html>
 <html lang="en" x-data="{ open: false }">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miles Shellen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miles Shellen – Work</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+
 <body class="bg-neutral-950 text-neutral-100 font-sans">
 
-  <!-- Header -->
+  <!-- NAVBAR -->
   <header class="flex justify-between items-center px-6 py-4 border-b border-neutral-800">
     <div class="flex items-center gap-6">
       <h1 class="text-xl font-semibold tracking-tight">Miles Shellen</h1>
       <nav class="hidden md:flex gap-6 text-sm text-neutral-400">
-        <a href="index.html" class="hover:text-neutral-100">Home</a>
-        <a href="work.html" class="hover:text-neutral-100">Work</a>
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="work.html" class="hover:text-white">About</a>
       </nav>
     </div>
-    <button @click="open = !open" class="md:hidden text-neutral-400 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor">
+    <button @click="open = !open" class="md:hidden text-neutral-400">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </header>
 
-  <!-- Mobile Menu -->
+  <!-- MOBILE MENU -->
   <nav x-show="open" x-transition class="md:hidden flex flex-col items-center py-4 space-y-3 bg-neutral-900">
     <a href="index.html" class="hover:text-white">Home</a>
-    <a href="work.html" class="hover:text-white">Work</a>
+    <a href="work.html" class="hover:text-white">About</a>
   </nav>
 
-  <!-- Hero (Image Left on Desktop, Text First on Mobile) -->
-  <section class="py-20 px-6 max-w-5xl mx-auto">
-    <div class="flex flex-col-reverse md:flex-row items-center md:items-start gap-12">
+  <!-- WORK GRID -->
+  <section class="py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="text-4xl font-semibold text-center mb-12">Work by Miles Shellen</h2>
 
-      <!-- Text -->
-      <div class="text-center md:text-left">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Who is Miles Shellen?</h2>
-        <p class="text-neutral-400 mb-8 max-w-md">
-          I'm a graphic designer, video producer, and automotive enthusiast currently studying advertising at the University of Oregon.
-        </p>
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <a href="work.html"
-           class="bg-neutral-100 text-neutral-950 px-6 py-3 rounded-full font-medium hover:bg-green-600 text-white transition">
-          View My Work
-        </a>
-      </div>
-
-      <!-- Image -->
-      <img 
-        src="images/miles1.jpg" 
-        alt="Miles Shellen" 
-        class="w-72 md:w-96 rounded-2xl shadow-xl object-cover"
+      <!-- ITEM 1 -->
+      <div
+        x-data="{ show: false }"
+        @mouseenter="show = true"
+        @mouseleave="show = false"
+        @click="show = !show"
+        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
       >
+        <img src="images/miles5.png"
+             class="w-full h-full object-cover transition duration-300"
+             :class="{ 'blur-sm scale-105': show }">
 
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-4xl font-semibold mb-4">A Little Bit About Me</h2>
-    <p class="text-neutral-300 leading-relaxed">
-      I'm Miles, a graphic designer, video producer, and marketing manager with a passion 
-      for creativity, storytelling, and design. I am from the East Bay Area of California, studying 
-      advertising with a minor in media studies at the University of Oregon. 
-      For 2 years, I was the manager for social media 
-      and marketing at KWVA 88.1, the University of Oregon’s campus radio station.
-      I love music, cars, diet soda, and the Oregon Ducks.
-    </p>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="px-6 md:px-20 py-20">
-    <div class="max-w-5xl mx-auto">
-      <h3 class="text-2xl font-semibold mb-8 text-center">Experience</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
-          <h4 class="font-semibold text-lg mb-2">Marketing Management</h4>
-          <p class="text-neutral-400 text-sm">
-            Social media management and merchandise designs for UO's KWVA 88.1 using skills in the Adobe suite.
-          </p>
-        </div>
-        <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
-          <h4 class="font-semibold text-lg mb-2">Video Production</h4>
-          <p class="text-neutral-400 text-sm">
-            Over 7 years of video editing experience using Premiere Pro & After Effects.
-          </p>
-        </div>
-        <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
-          <h4 class="font-semibold text-lg mb-2">Graphic Design</h4>
-          <p class="text-neutral-400 text-sm">
-            Personal projects such as stickers and apparel for my band - automotive design posters used as wall art - concept posts for UO sports teams.
-          </p>
+        <!-- Overlay Text -->
+        <div
+          x-show="show"
+          x-transition
+          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+        >
+          <p>Branding & Photoshop composite piece for client work.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="py-20 px-6 text-center bg-neutral-900">
-    <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
-    <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
-      I’m always open to creative collaborations, design opportunities, or just talking cars and design.
-    </p>
+      <!-- ITEM 2 -->
+      <div
+        x-data="{ show: false }"
+        @mouseenter="show = true"
+        @mouseleave="show = false"
+        @click="show = !show"
+        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
+      >
+        <img src="images/miles4.png"
+             class="w-full h-full object-cover transition duration-300"
+             :class="{ 'blur-sm scale-105': show }">
 
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="mailto:milesshellen@gmail.com" 
-         class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-        Email Me
-      </a>
-      <a href="https://www.instagram.com/milesshellen" target="_blank" 
-         class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-        Instagram
-      </a>
-      <a href="https://www.linkedin.com/in/milesshellen" target="_blank" 
-         class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-        LinkedIn
-      </a>
+        <div
+          x-show="show"
+          x-transition
+          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+        >
+          <p>Motion graphics concept created using After Effects.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div
+        x-data="{ show: false }"
+        @mouseenter="show = true"
+        @mouseleave="show = false"
+        @click="show = !show"
+        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
+      >
+        <img src="images/IMG_5734.PNG"
+             class="w-full h-full object-cover transition duration-300"
+             :class="{ 'blur-sm scale-105': show }">
+
+        <div
+          x-show="show"
+          x-transition
+          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+        >
+          <p>Illustration & design layout for custom apparel.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div
+        x-data="{ show: false }"
+        @mouseenter="show = true"
+        @mouseleave="show = false"
+        @click="show = !show"
+        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
+      >
+        <img src="images/IMG_5308.JPG"
+             class="w-full h-full object-cover transition duration-300"
+             :class="{ 'blur-sm scale-105': show }">
+
+        <div
+          x-show="show"
+          x-transition
+          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+        >
+          <p>Photography piece highlighting motion & atmosphere.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -129,6 +134,3 @@
 
 </body>
 </html>
-
-
-
