@@ -42,17 +42,19 @@
 
       <!-- ITEM 1 -->
       <div
-        x-data="{ show: false }"
-        @mouseenter="show = true"
-        @mouseleave="show = false"
-        @click="show = !show"
+        x-data="{
+          show: false,
+          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+        }"
+        @mouseenter="if (!isTouch) show = true"
+        @mouseleave="if (!isTouch) show = false"
+        @click="if (isTouch) show = !show"
         class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
       >
         <img src="images/miles5.png"
              class="w-full h-full object-cover transition duration-300"
              :class="{ 'blur-sm scale-105': show }">
 
-        <!-- Overlay Text -->
         <div
           x-show="show"
           x-transition
@@ -61,13 +63,16 @@
           <p>Concept social media post for Oregon Football - designed to showcase my skills in the Adobe suite</p>
         </div>
       </div>
-      
-<!-- ITEM 2 -->
+
+      <!-- ITEM 2 -->
       <div
-        x-data="{ show: false }"
-        @mouseenter="show = true"
-        @mouseleave="show = false"
-        @click="show = !show"
+        x-data="{
+          show: false,
+          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+        }"
+        @mouseenter="if (!isTouch) show = true"
+        @mouseleave="if (!isTouch) show = false"
+        @click="if (isTouch) show = !show"
         class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
       >
         <img src="images/IMG_5308.JPG"
@@ -82,12 +87,16 @@
           <p>A showcase of my merchandise capabilities - A sticker for my band "The Pink Door", for KWVA 88.1, and for my concept brand "Källen"</p>
         </div>
       </div>
+
       <!-- ITEM 3 -->
       <div
-        x-data="{ show: false }"
-        @mouseenter="show = true"
-        @mouseleave="show = false"
-        @click="show = !show"
+        x-data="{
+          show: false,
+          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+        }"
+        @mouseenter="if (!isTouch) show = true"
+        @mouseleave="if (!isTouch) show = false"
+        @click="if (isTouch) show = !show"
         class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
       >
         <img src="images/miles4.png"
@@ -105,10 +114,13 @@
 
       <!-- ITEM 4 -->
       <div
-        x-data="{ show: false }"
-        @mouseenter="show = true"
-        @mouseleave="show = false"
-        @click="show = !show"
+        x-data="{
+          show: false,
+          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+        }"
+        @mouseenter="if (!isTouch) show = true"
+        @mouseleave="if (!isTouch) show = false"
+        @click="if (isTouch) show = !show"
         class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
       >
         <img src="images/IMG_5734.PNG"
@@ -126,28 +138,29 @@
 
     </div>
   </section>
-<!-- Contact Section -->
-<section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
-  <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
-  <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
-    I’m always open to creative collaborations, design opportunities, or just talking cars and design.
-  </p>
 
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="mailto:milesshellen@gmail.com" 
-       class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-      Email Me
-    </a>
-    <a href="https://www.instagram.com/milesshellen" target="_blank" 
-       class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-      Instagram
-    </a>
-    <a href="https://www.linkedin.com/in/milesshellen" target="_blank" 
-       class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-      LinkedIn
-    </a>
-  </div>
-</section>
+  <!-- Contact Section -->
+  <section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
+    <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
+    <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
+      I’m always open to creative collaborations, design opportunities, or just talking cars and design.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="mailto:milesshellen@gmail.com" 
+         class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+        Email Me
+      </a>
+      <a href="https://www.instagram.com/milesshellen" target="_blank" 
+         class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+        Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/milesshellen" target="_blank" 
+         class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+        LinkedIn
+      </a>
+    </div>
+  </section>
 
   <footer class="text-center text-neutral-600 text-sm py-6 border-t border-neutral-800">
     © 2025 Miles Shellen
@@ -155,5 +168,3 @@
 
 </body>
 </html>
-
-
