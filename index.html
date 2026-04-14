@@ -12,8 +12,12 @@
     .swiper-pagination { position: static !important; margin-top: 16px; }
     .swiper-pagination-bullet { background: #a3a3a3; opacity: 1; }
     .swiper-pagination-bullet-active { background: #ffffff; }
-    .poster-swiper .swiper-slide { width: 300px; }
-    .poster-swiper .swiper-slide.landscape { width: 520px; }
+    .poster-swiper .swiper-slide { width: 260px; }
+    .poster-swiper .swiper-slide.landscape { width: 260px; }
+    @media (min-width: 768px) {
+      .poster-swiper .swiper-slide { width: 300px; }
+      .poster-swiper .swiper-slide.landscape { width: 520px; }
+    }
   </style>
 </head>
 
@@ -62,14 +66,14 @@
         <img src="images/Imag20.png"
              alt="40 Day Poster Project"
              class="w-full h-full object-cover transition duration-300"
-             :class="{ 'blur-sm scale-105': show }">
+             :class="{ 'blur-sm scale-105': show || isTouch }">
         <div
-          x-show="show"
+          x-show="show || isTouch"
           x-transition
           class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
         >
-          <p class="text-white text-xl font-semibold mb-2">40 Day Poster Project</p>
-          <p class="text-neutral-300 text-sm">Click to explore</p>
+          <p class="text-white text-xl font-semibold mb-2">One Poster, Every Day</p>
+          <p class="text-neutral-300 text-sm">Ad Class Assignment</p>
         </div>
       </div>
 
@@ -87,14 +91,14 @@
         <img src="images/IMG_5308.JPG"
              alt="Merch Capabilities"
              class="w-full h-full object-cover transition duration-300"
-             :class="{ 'blur-sm scale-105': show }">
+             :class="{ 'blur-sm scale-105': show || isTouch }">
         <div
-          x-show="show"
+          x-show="show || isTouch"
           x-transition
           class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
         >
           <p class="text-white text-xl font-semibold mb-2">Merch &amp; Print</p>
-          <p class="text-neutral-300 text-sm">Click to explore</p>
+          <p class="text-neutral-300 text-sm">Tangible Work</p>
         </div>
       </div>
 
@@ -165,7 +169,7 @@
 
     <div class="mt-6 max-w-xl text-center px-6">
       <p class="text-neutral-300 text-sm leading-relaxed">
-        A self-imposed challenge: one original poster, every day, for forty days. Each piece was designed from scratch — exploring type, composition, color, and concept under a daily deadline.
+        An ad class challenge: forty days, forty iterations. original poster, every day, for forty days. Each piece was composed by me, exploring type, composition, color, and concept under a daily deadline.
       </p>
     </div>
   </div>
