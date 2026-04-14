@@ -6,6 +6,8 @@
   <title>Miles Shellen – Work</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100 font-sans">
@@ -37,102 +39,174 @@
   <section class="py-16 px-6 max-w-5xl mx-auto">
     <h2 class="text-4xl font-semibold text-center mb-12">Work by Miles Shellen</h2>
 
-    <!-- Responsive Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-      <!-- ITEM 1 -->
+      <!-- CARD 1: 40-Day Poster Project -->
       <div
         x-data="{
           show: false,
+          modalOpen: false,
           isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
         }"
         @mouseenter="if (!isTouch) show = true"
         @mouseleave="if (!isTouch) show = false"
-        @click="if (isTouch) show = !show"
-        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
+        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
+        @click="modalOpen = true"
       >
-        <img src="images/miles5.png"
+        <!-- Thumbnail image — replace with your actual cover image -->
+        <img src="images/poster_cover.jpg"
+             alt="40 Day Poster Project"
              class="w-full h-full object-cover transition duration-300"
              :class="{ 'blur-sm scale-105': show }">
 
+        <!-- Hover overlay -->
         <div
-          x-show="show"
+          x-show="show || isTouch"
           x-transition
-          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+          class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
         >
-          <p>Concept social media post for Oregon Football - designed to showcase my skills in the Adobe suite</p>
+          <p class="text-white text-xl font-semibold mb-2">40 Day Poster Project</p>
+          <p class="text-neutral-300 text-sm">click me!</p>
+        </div>
+
+        <!-- MODAL -->
+        <div
+          x-show="modalOpen"
+          x-transition.opacity
+          @click.self="modalOpen = false"
+          class="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
+          style="display: none;"
+        >
+          <!-- Close button -->
+          <button
+            @click="modalOpen = false"
+            class="absolute top-5 right-6 text-neutral-400 hover:text-white text-3xl font-light z-10"
+          >&times;</button>
+
+          <!-- Swiper carousel -->
+          <div class="swiper poster-swiper w-full max-w-2xl px-4">
+            <div class="swiper-wrapper">
+              <!-- ↓↓↓ Replace these src values with your actual poster images ↓↓↓ -->
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 1"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 2"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 3"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 4"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 5"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 6"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 7"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 8"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 9"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 10"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 11"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 12"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 13"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 14"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 15"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 16"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 17"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 18"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 19"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 20"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 21"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 22"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 23"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 24"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 25"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 26"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 27"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 28"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 29"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 30"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 31"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 32"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 33"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 34"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 35"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 36"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 37"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 38"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 39"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[65vh] object-contain rounded-xl" alt="Poster 40"></div>
+              <!-- ↑↑↑ End of poster images ↑↑↑ -->
+            </div>
+            <div class="swiper-button-next !text-white"></div>
+            <div class="swiper-button-prev !text-white"></div>
+            <div class="swiper-pagination !bottom-0"></div>
+          </div>
+
+          <!-- Constant description -->
+          <div class="mt-6 max-w-xl text-center px-6">
+            <p class="text-neutral-300 text-sm leading-relaxed">
+              <!-- ↓ Replace this with your own description of the 40-day project ↓ -->
+              An Ad class challenge: forty days, forty iterations. I chose to make one original poster, every day, for forty days. Each piece was composed by me — exploring type, composition, color, and concept under a daily deadline.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- ITEM 2 -->
+      <!-- CARD 2: Merch Capabilities -->
       <div
         x-data="{
           show: false,
+          modalOpen: false,
           isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
         }"
         @mouseenter="if (!isTouch) show = true"
         @mouseleave="if (!isTouch) show = false"
-        @click="if (isTouch) show = !show"
-        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
+        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
+        @click="modalOpen = true"
       >
+        <!-- Thumbnail image — use one of your merch images as cover -->
         <img src="images/IMG_5308.JPG"
+             alt="Merch Capabilities"
              class="w-full h-full object-cover transition duration-300"
              :class="{ 'blur-sm scale-105': show }">
 
+        <!-- Hover overlay -->
         <div
-          x-show="show"
+          x-show="show || isTouch"
           x-transition
-          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+          class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
         >
-          <p>A showcase of my merchandise capabilities - A sticker for my band "The Pink Door", for KWVA 88.1, and for my concept brand "Källen"</p>
+          <p class="text-white text-xl font-semibold mb-2">Merch & Print</p>
+          <p class="text-neutral-300 text-sm">Tap to explore</p>
         </div>
-      </div>
 
-      <!-- ITEM 3 -->
-      <div
-        x-data="{
-          show: false,
-          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
-        }"
-        @mouseenter="if (!isTouch) show = true"
-        @mouseleave="if (!isTouch) show = false"
-        @click="if (isTouch) show = !show"
-        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
-      >
-        <img src="images/miles4.png"
-             class="w-full h-full object-cover transition duration-300"
-             :class="{ 'blur-sm scale-105': show }">
-
+        <!-- MODAL -->
         <div
-          x-show="show"
-          x-transition
-          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
+          x-show="modalOpen"
+          x-transition.opacity
+          @click.self="modalOpen = false"
+          class="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
+          style="display: none;"
         >
-          <p>BMW print ad study - finding ways to combine advertising and graphic design</p>
-        </div>
-      </div>
+          <!-- Close button -->
+          <button
+            @click="modalOpen = false"
+            class="absolute top-5 right-6 text-neutral-400 hover:text-white text-3xl font-light z-10"
+          >&times;</button>
 
-      <!-- ITEM 4 -->
-      <div
-        x-data="{
-          show: false,
-          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
-        }"
-        @mouseenter="if (!isTouch) show = true"
-        @mouseleave="if (!isTouch) show = false"
-        @click="if (isTouch) show = !show"
-        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg"
-      >
-        <img src="images/IMG_5734.PNG"
-             class="w-full h-full object-cover transition duration-300"
-             :class="{ 'blur-sm scale-105': show }">
+          <!-- Swiper carousel -->
+          <div class="swiper merch-swiper w-full max-w-2xl px-4">
+            <div class="swiper-wrapper">
+              <!-- ↓↓↓ Replace/add your merch images here ↓↓↓ -->
+              <div class="swiper-slide flex items-center justify-center"><img src="images/IMG_5308.JPG" class="max-h-[65vh] object-contain rounded-xl" alt="Merch 1"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/merch2.jpg" class="max-h-[65vh] object-contain rounded-xl" alt="Merch 2"></div>
+              <div class="swiper-slide flex items-center justify-center"><img src="images/merch3.jpg" class="max-h-[65vh] object-contain rounded-xl" alt="Merch 3"></div>
+              <!-- ↑↑↑ End of merch images ↑↑↑ -->
+            </div>
+            <div class="swiper-button-next !text-white"></div>
+            <div class="swiper-button-prev !text-white"></div>
+            <div class="swiper-pagination !bottom-0"></div>
+          </div>
 
-        <div
-          x-show="show"
-          x-transition
-          class="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-4 text-neutral-100 text-lg"
-        >
-          <p>A continuation of my personal interests - a project I put together to use as wall art, using my favorite car of all time.</p>
+          <!-- Constant description -->
+          <div class="mt-6 max-w-xl text-center px-6">
+            <p class="text-neutral-300 text-sm leading-relaxed">
+              <!-- ↓ Replace this with your own description ↓ -->
+              A showcase of my merchandise design capabilities — stickers, apparel, and print work for my band The Pink Door, KWVA 88.1, and my concept brand Källen.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -143,19 +217,18 @@
   <section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
     <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
     <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
-      I’m always open to creative collaborations, design opportunities, or just talking cars and design.
+      I'm always open to creative collaborations, design opportunities, or just talking cars and design.
     </p>
-
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="mailto:milesshellen@gmail.com" 
+      <a href="mailto:milesshellen@gmail.com"
          class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
         Email Me
       </a>
-      <a href="https://www.instagram.com/milesshellen" target="_blank" 
+      <a href="https://www.instagram.com/milesshellen" target="_blank"
          class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
         Instagram
       </a>
-      <a href="https://www.linkedin.com/in/milesshellen" target="_blank" 
+      <a href="https://www.linkedin.com/in/milesshellen" target="_blank"
          class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
         LinkedIn
       </a>
@@ -165,6 +238,38 @@
   <footer class="text-center text-neutral-600 text-sm py-6 border-t border-neutral-800">
     © 2025 Miles Shellen
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.poster-swiper', {
+        loop: true,
+        navigation: {
+          nextEl: '.poster-swiper .swiper-button-next',
+          prevEl: '.poster-swiper .swiper-button-prev',
+        },
+        pagination: {
+          el: '.poster-swiper .swiper-pagination',
+          clickable: true,
+        },
+        keyboard: { enabled: true },
+        grabCursor: true,
+      });
+
+      new Swiper('.merch-swiper', {
+        loop: true,
+        navigation: {
+          nextEl: '.merch-swiper .swiper-button-next',
+          prevEl: '.merch-swiper .swiper-button-prev',
+        },
+        pagination: {
+          el: '.merch-swiper .swiper-pagination',
+          clickable: true,
+        },
+        keyboard: { enabled: true },
+        grabCursor: true,
+      });
+    });
+  </script>
 
 </body>
 </html>
