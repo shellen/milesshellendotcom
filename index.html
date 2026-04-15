@@ -8,7 +8,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Miles Shellen – Work">
   <meta property="og:description" content="Portfolio of Miles Shellen — graphic designer, video producer, and marketing manager based in Eugene, OR.">
-  <meta property="og:image" content="images/Imag20.png">
+  <meta property="og:image" content="images/Imag20.webp">
   <meta property="og:url" content="https://milesshellen.com/index.html">
   <meta property="og:type" content="website">
 
@@ -74,10 +74,10 @@
           }"
           @mouseenter="if (!isTouch) show = true"
           @mouseleave="if (!isTouch) show = false"
-          @click="posterOpen = true"
+          @click="posterOpen = true; $nextTick(() => initPosterSwiper())"
           class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
         >
-          <img src="images/Imag20.png"
+          <img src="images/Imag20.webp"
                alt="40 Day Poster Project"
                class="w-full h-full object-cover transition duration-300"
                :class="{ 'blur-sm scale-105': show || isTouch }">
@@ -99,7 +99,7 @@
           }"
           @mouseenter="if (!isTouch) show = true"
           @mouseleave="if (!isTouch) show = false"
-          @click="merchOpen = true"
+          @click="merchOpen = true; $nextTick(() => initMerchSwiper())"
           class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
         >
           <img src="images/IMG_5308.JPG"
@@ -136,43 +136,43 @@
 
       <div class="swiper poster-swiper w-full max-w-4xl">
         <div class="swiper-wrapper">
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 1"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag2.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 2"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag3.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 3"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag4.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 4"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag5.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 5"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag6.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 6"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag7.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 7"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag8.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 8"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag9.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 9"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag10.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 10"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag11.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 11"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag12.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 12"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag13.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 13"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag14.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 14"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag15.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 15"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag16.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 16"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag17.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 17"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag18.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 18"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag19.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 19"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag20.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 20"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag21.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 21"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag22.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 22"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag23.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 23"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag24.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 24"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag25.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 25"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag26.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 26"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag27.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 27"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag28.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 28"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag29.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 29"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag30.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 30"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag31.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 31"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag32.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 32"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag33.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 33"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag34.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 34"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag35.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 35"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag36.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 36"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag37.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 37"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 1"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag2.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 2"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag3.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 3"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag4.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 4"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag5.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 5"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag6.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 6"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag7.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 7"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag8.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 8"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag9.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 9"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag10.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 10"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag11.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 11"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag12.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 12"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag13.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 13"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag14.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 14"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag15.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 15"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag16.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 16"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag17.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 17"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag18.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 18"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag19.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 19"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag20.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 20"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag21.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 21"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag22.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 22"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag23.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 23"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag24.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 24"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag25.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 25"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag26.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 26"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag27.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 27"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag28.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 28"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag29.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 29"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag30.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 30"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag31.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 31"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag32.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 32"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag33.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 33"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag34.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 34"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag35.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 35"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag36.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 36"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag37.webp" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 37"></div>
           <div class="swiper-slide flex items-center justify-center"><img src="images/Imag38.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 38"></div>
           <div class="swiper-slide flex items-center justify-center"><img src="images/Imag39.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 39"></div>
           <div class="swiper-slide flex items-center justify-center"><img src="images/Imag40.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 40"></div>
@@ -224,17 +224,7 @@
         </p>
       </div>
     </div>
-    <!-- Resume Download Button -->
-    <div class="text-center mt-10">
-      <a 
-        href="MilesShellen_Resume2026.pdf"
-        download
-        onclick="return confirm('Download resume?');"
-        class="inline-block bg-neutral-100 text-neutral-900 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-green-600 hover:text-white transition"
-      >
-        Download My Resume
-      </a>
-    </div>
+
     <!-- Contact Section -->
     <section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
       <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
@@ -264,8 +254,12 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      new Swiper('.poster-swiper', {
+    let posterSwiper = null;
+    let merchSwiper = null;
+
+    function initPosterSwiper() {
+      if (posterSwiper) { posterSwiper.update(); return; }
+      posterSwiper = new Swiper('.poster-swiper', {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
@@ -288,8 +282,11 @@
         },
         keyboard: { enabled: true },
       });
+    }
 
-      new Swiper('.merch-swiper', {
+    function initMerchSwiper() {
+      if (merchSwiper) { merchSwiper.update(); return; }
+      merchSwiper = new Swiper('.merch-swiper', {
         loop: true,
         navigation: {
           nextEl: '.merch-swiper .swiper-button-next',
@@ -302,7 +299,7 @@
         keyboard: { enabled: true },
         grabCursor: true,
       });
-    });
+    }
   </script>
 
 </body>
