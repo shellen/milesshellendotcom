@@ -2,9 +2,18 @@
 <html lang="en" x-data="{ navOpen: false, posterOpen: false, merchOpen: false }">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miles Shellen – Work</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Miles Shellen – Work">
+  <meta property="og:description" content="Portfolio of Miles Shellen — graphic designer, video producer, and marketing manager based in Eugene, OR.">
+  <meta property="og:image" content="images/Imag20.png">
+  <meta property="og:url" content="https://milesshellen.com/index.html">
+  <meta property="og:type" content="website">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -32,7 +41,7 @@
         <a href="about.html" class="hover:text-white">About</a>
       </nav>
     </div>
-    <button @click="navOpen = !navOpen" class="md:hidden text-neutral-400">
+    <button @click="navOpen = !navOpen" aria-label="Toggle navigation menu" class="md:hidden text-neutral-400">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M4 6h16M4 12h16M4 18h16" />
@@ -41,198 +50,217 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <nav x-show="navOpen" x-transition class="md:hidden flex flex-col items-center py-4 space-y-3 bg-neutral-900">
-    <a href="index.html" class="hover:text-white">Home</a>
-    <a href="about.html" class="hover:text-white">About</a>
+  <nav
+    x-show="navOpen"
+    x-collapse
+    class="md:hidden bg-neutral-900 border-b border-neutral-800">
+    <a href="index.html" class="block w-full text-center py-4 text-neutral-300 hover:text-white hover:bg-neutral-800 transition border-b border-neutral-800">Home</a>
+    <a href="about.html" class="block w-full text-center py-4 text-neutral-300 hover:text-white hover:bg-neutral-800 transition">About</a>
   </nav>
 
-  <!-- WORK GRID -->
-  <section class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-4xl font-semibold text-center mb-12">Work by Miles Shellen</h2>
+  <main>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- WORK GRID -->
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+      <h2 class="text-4xl font-semibold text-center mb-12">Work by Miles Shellen</h2>
 
-      <!-- CARD 1: 40-Day Poster Project -->
-      <div
-        x-data="{
-          show: false,
-          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
-        }"
-        @mouseenter="if (!isTouch) show = true"
-        @mouseleave="if (!isTouch) show = false"
-        @click="posterOpen = true"
-        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
-      >
-        <img src="images/Imag20.png"
-             alt="40 Day Poster Project"
-             class="w-full h-full object-cover transition duration-300"
-             :class="{ 'blur-sm scale-105': show || isTouch }">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- CARD 1: 40-Day Poster Project -->
         <div
-          x-show="show || isTouch"
-          x-transition
-          class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
+          x-data="{
+            show: false,
+            isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+          }"
+          @mouseenter="if (!isTouch) show = true"
+          @mouseleave="if (!isTouch) show = false"
+          @click="posterOpen = true"
+          class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
         >
-          <p class="text-white text-xl font-semibold mb-2">One Poster, Every Day</p>
-          <p class="text-neutral-300 text-sm">Ad Class Assignment</p>
+          <img src="images/Imag20.png"
+               alt="40 Day Poster Project"
+               class="w-full h-full object-cover transition duration-300"
+               :class="{ 'blur-sm scale-105': show || isTouch }">
+          <div
+            x-show="show || isTouch"
+            x-transition
+            class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
+          >
+            <p class="text-white text-xl font-semibold mb-2">One Poster, Every Day</p>
+            <p class="text-neutral-300 text-sm">Ad Class Assignment</p>
+          </div>
         </div>
-      </div>
 
-      <!-- CARD 2: Merch Capabilities -->
-      <div
-        x-data="{
-          show: false,
-          isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
-        }"
-        @mouseenter="if (!isTouch) show = true"
-        @mouseleave="if (!isTouch) show = false"
-        @click="merchOpen = true"
-        class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
-      >
-        <img src="images/IMG_5308.JPG"
-             alt="Merch Capabilities"
-             class="w-full h-full object-cover transition duration-300"
-             :class="{ 'blur-sm scale-105': show || isTouch }">
+        <!-- CARD 2: Merch Capabilities -->
         <div
-          x-show="show || isTouch"
-          x-transition
-          class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
+          x-data="{
+            show: false,
+            isTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+          }"
+          @mouseenter="if (!isTouch) show = true"
+          @mouseleave="if (!isTouch) show = false"
+          @click="merchOpen = true"
+          class="relative cursor-pointer rounded-2xl overflow-hidden shadow-lg aspect-square"
         >
-          <p class="text-white text-xl font-semibold mb-2">Merch &amp; Social Posts</p>
-          <p class="text-neutral-300 text-sm">Tangible Work</p>
+          <img src="images/IMG_5308.JPG"
+               alt="Merch Capabilities"
+               class="w-full h-full object-cover transition duration-300"
+               :class="{ 'blur-sm scale-105': show || isTouch }">
+          <div
+            x-show="show || isTouch"
+            x-transition
+            class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-6"
+          >
+            <p class="text-white text-xl font-semibold mb-2">Merch &amp; Social Posts</p>
+            <p class="text-neutral-300 text-sm">Tangible Work</p>
+          </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- POSTER MODAL -->
+    <div
+      x-show="posterOpen"
+      x-transition.opacity
+      @click.self="posterOpen = false"
+      @keydown.escape.window="posterOpen = false"
+      class="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center px-4"
+      style="display: none;"
+    >
+      <button
+        @click="posterOpen = false"
+        aria-label="Close poster gallery"
+        class="absolute top-5 right-6 text-neutral-400 hover:text-white text-4xl font-light leading-none z-10"
+      >&times;</button>
+
+      <div class="swiper poster-swiper w-full max-w-4xl">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 1"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag2.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 2"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag3.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 3"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag4.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 4"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag5.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 5"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag6.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 6"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag7.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 7"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag8.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 8"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag9.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 9"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag10.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 10"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag11.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 11"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag12.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 12"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag13.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 13"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag14.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 14"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag15.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 15"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag16.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 16"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag17.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 17"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag18.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 18"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag19.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 19"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag20.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 20"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag21.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 21"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag22.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 22"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag23.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 23"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag24.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 24"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag25.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 25"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag26.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 26"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag27.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 27"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag28.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 28"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag29.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 29"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag30.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 30"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag31.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 31"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag32.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 32"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag33.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 33"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag34.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 34"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag35.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 35"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag36.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 36"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag37.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 37"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag38.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 38"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag39.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 39"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag40.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 40"></div>
+        </div>
+        <div class="swiper-button-next !text-white"></div>
+        <div class="swiper-button-prev !text-white"></div>
+        <div class="swiper-pagination"></div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- POSTER MODAL -->
-  <div
-    x-show="posterOpen"
-    x-transition.opacity
-    @click.self="posterOpen = false"
-    @keydown.escape.window="posterOpen = false"
-    class="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center px-4"
-    style="display: none;"
-  >
-    <button
-      @click="posterOpen = false"
-      class="absolute top-5 right-6 text-neutral-400 hover:text-white text-4xl font-light leading-none z-10"
-    >&times;</button>
-
-    <div class="swiper poster-swiper w-full max-w-4xl">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 1"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag2.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 2"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag3.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 3"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag4.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 4"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag5.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 5"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag6.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 6"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag7.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 7"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag8.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 8"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag9.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 9"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag10.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 10"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag11.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 11"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag12.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 12"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag13.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 13"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag14.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 14"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag15.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 15"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag16.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 16"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag17.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 17"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag18.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 18"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag19.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 19"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag20.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 20"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag21.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 21"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag22.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 22"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag23.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 23"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag24.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 24"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag25.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 25"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag26.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 26"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag27.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 27"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag28.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 28"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag29.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 29"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag30.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 30"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag31.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 31"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag32.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 32"></div>
-        <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag33.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 33"></div>
-        <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag34.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 34"></div>
-        <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag35.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 35"></div>
-        <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag36.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 36"></div>
-        <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag37.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 37"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag38.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 38"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag39.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 39"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/Imag40.png" class="max-h-[60vh] object-contain rounded-xl" alt="Poster 40"></div>
+      <div class="mt-6 max-w-xl text-center px-6">
+        <p class="text-neutral-300 text-sm leading-relaxed">
+          An ad class challenge: forty days, forty iterations. original poster, every day, for forty days. Each piece was composed by me, exploring type, composition, color, and concept under a daily deadline.
+        </p>
       </div>
-      <div class="swiper-button-next !text-white"></div>
-      <div class="swiper-button-prev !text-white"></div>
-      <div class="swiper-pagination"></div>
     </div>
 
-    <div class="mt-6 max-w-xl text-center px-6">
-      <p class="text-neutral-300 text-sm leading-relaxed">
-        An ad class challenge: forty days, forty iterations. original poster, every day, for forty days. Each piece was composed by me, exploring type, composition, color, and concept under a daily deadline.
+    <!-- MERCH MODAL -->
+    <div
+      x-show="merchOpen"
+      x-transition.opacity
+      @click.self="merchOpen = false"
+      @keydown.escape.window="merchOpen = false"
+      class="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center px-4"
+      style="display: none;"
+    >
+      <button
+        @click="merchOpen = false"
+        aria-label="Close merch gallery"
+        class="absolute top-5 right-6 text-neutral-400 hover:text-white text-4xl font-light leading-none z-10"
+      >&times;</button>
+
+      <div class="swiper merch-swiper w-full max-w-2xl">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex items-center justify-center"><img src="images/IMG_5308.JPG" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="Merch and social design work – item 1"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/merch2.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="Merch and social design work – item 2"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/merch3.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="Merch and social design work – item 3"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/merch4.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="Merch and social design work – item 4"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/merch5.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="Merch and social design work – item 5"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/merch6.png" loading="lazy" class="max-h-[60vh] object-contain rounded-xl" alt="Merch and social design work – item 6"></div>
+        </div>
+        <div class="swiper-button-next !text-white"></div>
+        <div class="swiper-button-prev !text-white"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="mt-6 max-w-xl text-center px-6">
+        <p class="text-neutral-300 text-sm leading-relaxed">
+          A showcase of my merchandise and logo design capabilities — stickers, social media posts, and print work for my band The Pink Door, KWVA 88.1, and my concept brand Källen.
+        </p>
+      </div>
+    </div>
+    <!-- Resume Download Button -->
+    <div class="text-center mt-10">
+      <a 
+        href="MilesShellen_Resume2026.pdf"
+        download
+        onclick="return confirm('Download resume?');"
+        class="inline-block bg-neutral-100 text-neutral-900 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-green-600 hover:text-white transition"
+      >
+        Download My Resume
+      </a>
+    </div>
+    <!-- Contact Section -->
+    <section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
+      <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
+      <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
+        I'm always open to creative collaborations, design opportunities, or just talking cars and design.
       </p>
-    </div>
-  </div>
-
-  <!-- MERCH MODAL -->
-  <div
-    x-show="merchOpen"
-    x-transition.opacity
-    @click.self="merchOpen = false"
-    @keydown.escape.window="merchOpen = false"
-    class="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center px-4"
-    style="display: none;"
-  >
-    <button
-      @click="merchOpen = false"
-      class="absolute top-5 right-6 text-neutral-400 hover:text-white text-4xl font-light leading-none z-10"
-    >&times;</button>
-
-    <div class="swiper merch-swiper w-full max-w-2xl">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide flex items-center justify-center"><img src="images/IMG_5308.JPG" class="max-h-[60vh] object-contain rounded-xl" alt="Merch 1"></div>
-        <div class="swiper-slide landscape flex items-center justify-center"><img src="images/merch2.png" class="max-h-[60vh] object-contain rounded-xl" alt="Merch 2"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/merch3.png" class="max-h-[60vh] object-contain rounded-xl" alt="Merch 3"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/merch4.png" class="max-h-[60vh] object-contain rounded-xl" alt="Merch 4"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/merch5.png" class="max-h-[60vh] object-contain rounded-xl" alt="Merch 5"></div>
-        <div class="swiper-slide flex items-center justify-center"><img src="images/merch6.png" class="max-h-[60vh] object-contain rounded-xl" alt="Merch 6"></div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:milesshellen@gmail.com"
+           class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+          Email Me
+        </a>
+        <a href="https://www.instagram.com/milesshellen" target="_blank" rel="noopener noreferrer"
+           class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/milesshellen" target="_blank" rel="noopener noreferrer"
+           class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+          LinkedIn
+        </a>
       </div>
-      <div class="swiper-button-next !text-white"></div>
-      <div class="swiper-button-prev !text-white"></div>
-      <div class="swiper-pagination"></div>
-    </div>
+    </section>
 
-    <div class="mt-6 max-w-xl text-center px-6">
-      <p class="text-neutral-300 text-sm leading-relaxed">
-        A showcase of my merchandise and logo design capabilities — stickers, social media posts, and print work for my band The Pink Door, KWVA 88.1, and my concept brand Källen.
-      </p>
-    </div>
-  </div>
-
-  <!-- Contact Section -->
-  <section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
-    <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
-    <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
-      I'm always open to creative collaborations, design opportunities, or just talking cars and design.
-    </p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="mailto:milesshellen@gmail.com"
-         class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-        Email Me
-      </a>
-      <a href="https://www.instagram.com/milesshellen" target="_blank"
-         class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-        Instagram
-      </a>
-      <a href="https://www.linkedin.com/in/milesshellen" target="_blank"
-         class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-        LinkedIn
-      </a>
-    </div>
-  </section>
+  </main>
 
   <footer class="text-center text-neutral-600 text-sm py-6 border-t border-neutral-800">
-    © 2025 Miles Shellen
+    © 2026 Miles Shellen
   </footer>
 
   <script>
