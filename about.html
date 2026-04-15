@@ -2,8 +2,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miles Shellen - About</title>
+  <title>Miles Shellen – About</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Miles Shellen – About">
+  <meta property="og:description" content="Graphic designer, video producer, and marketing manager from the East Bay Area, studying advertising at the University of Oregon.">
+  <meta property="og:image" content="images/miles1.jpeg">
+  <meta property="og:url" content="https://milesshellen.com/about.html">
+  <meta property="og:type" content="website">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -18,7 +27,7 @@
         <a href="about.html" class="hover:text-neutral-100">About</a>
       </nav>
     </div>
-    <button @click="open = !open" class="md:hidden text-neutral-400 focus:outline-none">
+    <button @click="open = !open" aria-label="Toggle navigation menu" class="md:hidden text-neutral-400 focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -28,106 +37,111 @@
   </header>
 
   <!-- Mobile Menu -->
-  <nav x-show="open" x-transition class="md:hidden flex flex-col items-center py-4 space-y-3 bg-neutral-900">
-    <a href="index.html" class="hover:text-white">Home</a>
-    <a href="about.html" class="hover:text-white">About</a>
+  <nav
+    x-show="open"
+    x-collapse
+    class="md:hidden bg-neutral-900 border-b border-neutral-800">
+    <a href="index.html" class="block w-full text-center py-4 text-neutral-300 hover:text-white hover:bg-neutral-800 transition border-b border-neutral-800">Home</a>
+    <a href="about.html" class="block w-full text-center py-4 text-neutral-300 hover:text-white hover:bg-neutral-800 transition">About</a>
   </nav>
 
-  <!-- Hero (About Me) -->
-  <section class="py-20 px-6 max-w-5xl mx-auto">
-    <div class="flex flex-col-reverse md:flex-row items-center md:items-start gap-12">
+  <main>
 
-      <!-- Text -->
-      <div class="text-center md:text-left flex flex-col justify-center md:h-full md:pt-10">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Who is Miles Shellen?</h2>
+    <!-- Hero (About Me) -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+      <div class="flex flex-col-reverse md:flex-row items-center md:items-start gap-12">
 
-        <!-- REPLACED the old text with the About Me paragraph -->
-        <p class="text-neutral-400 max-w-md leading-relaxed">
-          I'm a graphic designer, video producer, and marketing manager with a passion 
-          for creativity, storytelling, and design. I am from the East Bay Area of California, studying 
-          advertising with a minor in media studies at the University of Oregon. 
-          For 2 years, I was the manager for social media 
-          and marketing at KWVA 88.1, the University of Oregon’s campus radio station.
-          I love music, cars, diet soda, and the Oregon Ducks.
-        </p>
+        <!-- Text -->
+        <div class="text-center md:text-left flex flex-col justify-center md:h-full md:pt-10">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Who is Miles Shellen?</h2>
+
+          <p class="text-neutral-400 max-w-md leading-relaxed">
+            I'm a graphic designer, video producer, and marketing manager with a passion 
+            for creativity, storytelling, and design. I am from the East Bay Area of California, studying 
+            advertising with a minor in media studies at the University of Oregon. 
+            For 2 years, I was the manager for social media 
+            and marketing at KWVA 88.1, the University of Oregon's campus radio station.
+            I love music, cars, diet soda, and the Oregon Ducks.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <img 
+          src="images/miles1.jpeg" 
+          alt="Miles Shellen" 
+          class="w-72 md:w-96 rounded-2xl shadow-xl object-cover"
+        >
+
       </div>
+    </section>
 
-      <!-- Image -->
-      <img 
-        src="images/miles1.jpeg" 
-        alt="Miles Shellen" 
-        class="w-72 md:w-96 rounded-2xl shadow-xl object-cover"
+    <!-- Resume Download Button (with confirmation) -->
+    <div class="text-center mt-10">
+      <a 
+        href="MilesShellen_Resume2026.pdf"
+        download
+        onclick="return confirm('Download resume?');"
+        class="inline-block bg-neutral-100 text-neutral-900 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-green-600 hover:text-white transition"
       >
-
+        Download My Resume
+      </a>
     </div>
-  </section>
-<!-- Resume Download Button (with confirmation) -->
-<div class="text-center mt-10">
-  <a 
-    href="MilesShellen_Resume2026.pdf"
-    download
-    onclick="return confirm('Download Miles Shellen’s 2026 resume?');"
-    class="inline-block bg-neutral-100 text-neutral-900 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-green-600 hover:text-white transition"
-  >
-    Download My Resume
-  </a>
-</div>
 
-  <!-- Experience Section -->
-  <section id="experience" class="px-6 md:px-20 py-20">
-    <div class="max-w-5xl mx-auto">
-      <h3 class="text-2xl font-semibold mb-8 text-center">Experience</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
-          <h4 class="font-semibold text-lg mb-2">Marketing Management</h4>
-          <p class="text-neutral-400 text-sm">
-            Social media management and merchandise designs for UO's KWVA 88.1 using skills in the Adobe suite.
-          </p>
-        </div>
-        <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
-          <h4 class="font-semibold text-lg mb-2">Video Production</h4>
-          <p class="text-neutral-400 text-sm">
-            Over 7 years of video editing experience using Premiere Pro & After Effects.
-          </p>
-        </div>
-        <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
-          <h4 class="font-semibold text-lg mb-2">Graphic Design</h4>
-          <p class="text-neutral-400 text-sm">
-            Personal projects such as stickers and apparel for my band — automotive design posters used as wall art — concept posts for UO sports teams.
-          </p>
+    <!-- Experience Section -->
+    <section id="experience" class="px-6 md:px-20 py-20">
+      <div class="max-w-5xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-8 text-center">Experience</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
+            <h4 class="font-semibold text-lg mb-2">Marketing Management</h4>
+            <p class="text-neutral-400 text-sm">
+              Social media management and merchandise designs for UO's KWVA 88.1 using skills in the Adobe suite.
+            </p>
+          </div>
+          <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
+            <h4 class="font-semibold text-lg mb-2">Video Production</h4>
+            <p class="text-neutral-400 text-sm">
+              Over 7 years of video editing experience using Premiere Pro & After Effects.
+            </p>
+          </div>
+          <div class="bg-neutral-900 p-6 rounded-2xl hover:-translate-y-1 transition">
+            <h4 class="font-semibold text-lg mb-2">Graphic Design</h4>
+            <p class="text-neutral-400 text-sm">
+              Personal projects such as stickers and apparel for my band — automotive design posters used as wall art — concept posts for UO sports teams.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- Contact Section -->
-<section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
-  <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
-  <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
-    I’m always open to creative collaborations, design opportunities, or just talking cars and design.
-  </p>
+    <!-- Contact Section -->
+    <section class="py-20 px-6 text-center bg-neutral-900 mt-16 rounded-2xl">
+      <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
+      <p class="text-neutral-400 mb-8 max-w-xl mx-auto">
+        I'm always open to creative collaborations, design opportunities, or just talking cars and design.
+      </p>
 
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="mailto:milesshellen@gmail.com" 
-       class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-      Email Me
-    </a>
-    <a href="https://www.instagram.com/milesshellen" target="_blank" 
-       class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-      Instagram
-    </a>
-    <a href="https://www.linkedin.com/in/milesshellen" target="_blank" 
-       class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
-      LinkedIn
-    </a>
-  </div>
-</section>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:milesshellen@gmail.com" 
+           class="bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+          Email Me
+        </a>
+        <a href="https://www.instagram.com/milesshellen" target="_blank" rel="noopener noreferrer"
+           class="bg-red-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/milesshellen" target="_blank" rel="noopener noreferrer"
+           class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-neutral-700 transition">
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="text-center text-neutral-600 text-sm py-6 border-t border-neutral-800">
-    © 2025 Miles Shellen
+    © 2026 Miles Shellen
   </footer>
 
 </body>
 </html>
-
-
