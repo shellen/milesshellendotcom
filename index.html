@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ navOpen: false, posterOpen: false, merchOpen: false }">
+<html lang="en" x-data="{ navOpen: false, posterOpen: false, merchOpen: false, lightboxOpen: false, lightboxIndex: 0 }">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -136,46 +136,46 @@
 
       <div class="swiper poster-swiper w-full max-w-4xl">
         <div class="swiper-wrapper">
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 1"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag2.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 2"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag3.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 3"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag4.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 4"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag5.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 5"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag6.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 6"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag7.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 7"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag8.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 8"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag9.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 9"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag10.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 10"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag11.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 11"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag12.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 12"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag13.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 13"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag14.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 14"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag15.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 15"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag16.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 16"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag17.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 17"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag18.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 18"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag19.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 19"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag20.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 20"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag21.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 21"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag22.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 22"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag23.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 23"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag24.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 24"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag25.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 25"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag26.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 26"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag27.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 27"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag28.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 28"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag29.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 29"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag30.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 30"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag31.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 31"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag32.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 32"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag33.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 33"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag34.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 34"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag35.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 35"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag36.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 36"></div>
-          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag37.webp" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 37"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag38.png" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 38"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag39.png" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 39"></div>
-          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag40.png" class="max-h-[60vh] object-contain rounded-xl" alt="40-Day Poster Project – Day 40"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag1.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 0; lightboxOpen = true" alt="40-Day Poster Project – Day 1"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag2.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 1; lightboxOpen = true" alt="40-Day Poster Project – Day 2"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag3.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 2; lightboxOpen = true" alt="40-Day Poster Project – Day 3"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag4.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 3; lightboxOpen = true" alt="40-Day Poster Project – Day 4"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag5.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 4; lightboxOpen = true" alt="40-Day Poster Project – Day 5"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag6.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 5; lightboxOpen = true" alt="40-Day Poster Project – Day 6"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag7.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 6; lightboxOpen = true" alt="40-Day Poster Project – Day 7"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag8.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 7; lightboxOpen = true" alt="40-Day Poster Project – Day 8"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag9.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 8; lightboxOpen = true" alt="40-Day Poster Project – Day 9"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag10.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 9; lightboxOpen = true" alt="40-Day Poster Project – Day 10"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag11.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 10; lightboxOpen = true" alt="40-Day Poster Project – Day 11"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag12.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 11; lightboxOpen = true" alt="40-Day Poster Project – Day 12"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag13.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 12; lightboxOpen = true" alt="40-Day Poster Project – Day 13"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag14.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 13; lightboxOpen = true" alt="40-Day Poster Project – Day 14"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag15.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 14; lightboxOpen = true" alt="40-Day Poster Project – Day 15"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag16.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 15; lightboxOpen = true" alt="40-Day Poster Project – Day 16"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag17.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 16; lightboxOpen = true" alt="40-Day Poster Project – Day 17"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag18.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 17; lightboxOpen = true" alt="40-Day Poster Project – Day 18"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag19.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 18; lightboxOpen = true" alt="40-Day Poster Project – Day 19"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag20.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 19; lightboxOpen = true" alt="40-Day Poster Project – Day 20"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag21.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 20; lightboxOpen = true" alt="40-Day Poster Project – Day 21"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag22.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 21; lightboxOpen = true" alt="40-Day Poster Project – Day 22"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag23.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 22; lightboxOpen = true" alt="40-Day Poster Project – Day 23"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag24.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 23; lightboxOpen = true" alt="40-Day Poster Project – Day 24"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag25.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 24; lightboxOpen = true" alt="40-Day Poster Project – Day 25"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag26.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 25; lightboxOpen = true" alt="40-Day Poster Project – Day 26"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag27.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 26; lightboxOpen = true" alt="40-Day Poster Project – Day 27"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag28.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 27; lightboxOpen = true" alt="40-Day Poster Project – Day 28"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag29.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 28; lightboxOpen = true" alt="40-Day Poster Project – Day 29"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag30.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 29; lightboxOpen = true" alt="40-Day Poster Project – Day 30"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag31.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 30; lightboxOpen = true" alt="40-Day Poster Project – Day 31"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag32.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 31; lightboxOpen = true" alt="40-Day Poster Project – Day 32"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag33.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 32; lightboxOpen = true" alt="40-Day Poster Project – Day 33"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag34.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 33; lightboxOpen = true" alt="40-Day Poster Project – Day 34"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag35.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 34; lightboxOpen = true" alt="40-Day Poster Project – Day 35"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag36.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 35; lightboxOpen = true" alt="40-Day Poster Project – Day 36"></div>
+          <div class="swiper-slide landscape flex items-center justify-center"><img src="images/Imag37.webp" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 36; lightboxOpen = true" alt="40-Day Poster Project – Day 37"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag38.png" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 37; lightboxOpen = true" alt="40-Day Poster Project – Day 38"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag39.png" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 38; lightboxOpen = true" alt="40-Day Poster Project – Day 39"></div>
+          <div class="swiper-slide flex items-center justify-center"><img src="images/Imag40.png" class="max-h-[60vh] object-contain rounded-xl cursor-pointer" @click.stop="lightboxIndex = 39; lightboxOpen = true" alt="40-Day Poster Project – Day 40"></div>
         </div>
         <div class="swiper-button-next !text-white"></div>
         <div class="swiper-button-prev !text-white"></div>
@@ -287,6 +287,52 @@
       });
     }
 
+    let lightboxSwiper = null;
+
+    function initLightbox(index) {
+      if (!lightboxSwiper) {
+        lightboxSwiper = new Swiper('.lightbox-swiper', {
+          loop: false,
+          initialSlide: index,
+          navigation: {
+            nextEl: '.lightbox-swiper .swiper-button-next',
+            prevEl: '.lightbox-swiper .swiper-button-prev',
+          },
+          keyboard: { enabled: true },
+          grabCursor: true,
+        });
+
+        // Swipe down to close
+        let touchStartY = 0;
+        let touchStartX = 0;
+        const el = document.getElementById('lightbox-swiper-el');
+        el.addEventListener('touchstart', (e) => {
+          touchStartY = e.touches[0].clientY;
+          touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        el.addEventListener('touchend', (e) => {
+          const dy = e.changedTouches[0].clientY - touchStartY;
+          const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+          // Close if swiped down more than 80px and not mostly horizontal
+          if (dy > 80 && dx < 60) {
+            document.dispatchEvent(new CustomEvent('close-lightbox'));
+          }
+        }, { passive: true });
+      } else {
+        lightboxSwiper.slideTo(index, 0);
+      }
+    }
+
+    document.addEventListener('alpine:init', () => {
+      Alpine.effect(() => {
+        const idx = Alpine.store ? undefined : undefined; // just trigger reactivity via watch
+      });
+    });
+
+    window.addEventListener('lightbox-open', (e) => {
+      initLightbox(e.detail.index);
+    });
+
     function initMerchSwiper() {
       if (merchSwiper) { merchSwiper.update(); return; }
       merchSwiper = new Swiper('.merch-swiper', {
@@ -304,6 +350,72 @@
       });
     }
   </script>
+
+
+  <!-- LIGHTBOX -->
+  <div
+    x-show="lightboxOpen"
+    x-transition.opacity
+    x-init="$watch('lightboxOpen', val => { if (val) $nextTick(() => initLightbox(lightboxIndex)) })"
+    @click.self="lightboxOpen = false"
+    @keydown.escape.window="lightboxOpen = false"
+    @close-lightbox.document="lightboxOpen = false"
+    class="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center"
+    style="display: none;"
+  >
+    <button
+      @click="lightboxOpen = false"
+      aria-label="Close fullscreen view"
+      class="absolute top-5 right-6 text-neutral-400 hover:text-white text-4xl font-light leading-none z-10"
+    >&times;</button>
+
+    <div class="swiper lightbox-swiper w-full h-full" id="lightbox-swiper-el">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag1.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 1"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag2.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 2"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag3.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 3"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag4.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 4"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag5.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 5"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag6.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 6"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag7.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 7"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag8.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 8"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag9.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 9"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag10.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 10"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag11.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 11"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag12.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 12"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag13.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 13"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag14.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 14"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag15.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 15"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag16.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 16"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag17.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 17"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag18.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 18"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag19.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 19"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag20.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 20"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag21.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 21"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag22.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 22"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag23.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 23"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag24.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 24"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag25.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 25"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag26.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 26"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag27.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 27"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag28.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 28"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag29.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 29"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag30.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 30"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag31.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 31"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag32.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 32"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag33.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 33"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag34.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 34"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag35.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 35"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag36.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 36"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag37.webp" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 37"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag38.png" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 38"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag39.png" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 39"></div>
+        <div class="swiper-slide flex items-center justify-center p-4"><img src="images/Imag40.png" class="max-h-screen max-w-full object-contain cursor-pointer" @click="lightboxOpen = false" alt="40-Day Poster Project – Day 40"></div>
+      </div>
+      <div class="swiper-button-next !text-white"></div>
+      <div class="swiper-button-prev !text-white"></div>
+    </div>
+  </div>
 
 </body>
 </html>
