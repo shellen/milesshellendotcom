@@ -27,6 +27,12 @@
       .poster-swiper .swiper-slide { width: 300px; }
       .poster-swiper .swiper-slide.landscape { width: 520px; }
     }
+    @media (max-width: 767px) {
+      .lightbox-swiper .swiper-button-next,
+      .lightbox-swiper .swiper-button-prev {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -301,23 +307,6 @@
           keyboard: { enabled: true },
           grabCursor: true,
         });
-
-        // Swipe down to close
-        let touchStartY = 0;
-        let touchStartX = 0;
-        const el = document.getElementById('lightbox-swiper-el');
-        el.addEventListener('touchstart', (e) => {
-          touchStartY = e.touches[0].clientY;
-          touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-        el.addEventListener('touchend', (e) => {
-          const dy = e.changedTouches[0].clientY - touchStartY;
-          const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
-          // Close if swiped down more than 80px and not mostly horizontal
-          if (dy > 80 && dx < 60) {
-            document.dispatchEvent(new CustomEvent('close-lightbox'));
-          }
-        }, { passive: true });
       } else {
         lightboxSwiper.slideTo(index, 0);
       }
@@ -359,7 +348,6 @@
     x-init="$watch('lightboxOpen', val => { if (val) $nextTick(() => initLightbox(lightboxIndex)) })"
     @click.self="lightboxOpen = false"
     @keydown.escape.window="lightboxOpen = false"
-    @close-lightbox.document="lightboxOpen = false"
     class="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center"
     style="display: none;"
   >
